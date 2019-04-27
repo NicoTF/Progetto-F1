@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
+	private int accessi = 0;
+	
 	@RequestMapping("/")
 	public String[] index() {
-		return new String[]{"questa", "è", "una", "prova"};
+		return new String[]{"questa", "è", "sparta", ".", "" + accessi++};
 	}
 }
