@@ -18,6 +18,7 @@ public class GetController {
 			m.put("ref", "boh");
 			m.put("number", 17);
 			m.put("code", "codice");
+			m.put("nationality", "ita");
 		} else {
 			m.put("error", "Id inesistente");
 		}
