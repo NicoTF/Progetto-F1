@@ -6,10 +6,9 @@
 package it.prepattag.F1;
 
 /**
- *
  * @author nicolo.tagliaferro
  */
 public class Variables {
-	public static String nome;
-	public static String cognome;
+    public static String nome;
+    public static String cognome;
 }

@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/set")
 
 public class SetController {
-	@RequestMapping(value = "nome", params = "value", method = RequestMethod.GET)
-	public boolean nome(@RequestParam("value") String value) {
-		Variables.nome = value;
-		return true;
-	}
-	
-	@RequestMapping(value = "cognome", params = "value", method = RequestMethod.GET)
-	public boolean gognome(@RequestParam("value") String value) {
-		Variables.cognome = value;
-		return true;
-	}
+    @RequestMapping(value = "nome", params = "value", method = RequestMethod.GET)
+    public boolean nome(@RequestParam("value") String value) {
+        Variables.nome = value;
+        return true;
+    }
+
+    @RequestMapping(value = "cognome", params = "value", method = RequestMethod.GET)
+    public boolean gognome(@RequestParam("value") String value) {
+        Variables.cognome = value;
+        return true;
+    }
 }
