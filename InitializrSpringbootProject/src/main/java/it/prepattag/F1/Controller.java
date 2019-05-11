@@ -12,7 +12,7 @@ public class Controller implements ErrorController {
 
     @RequestMapping(PATH)
     public String error() {
-        return "Errore di tipo Controller: stai attento, ghesboro.";
+        return "Errore di tipo Controller";
     }
 
     @Override
