@@ -31,7 +31,7 @@ public class GetController {
         return m;
     }
 
-    @RequestMapping("drivers")
+    @RequestMapping(value = "drivers", method = RequestMethod.GET, produces = "application/json")
     public HashMap[] drivers() {
         HashMap<String, Object>[] arr = new HashMap[10];
         for (int i = 0; i < arr.length; i++) {
@@ -40,9 +40,7 @@ public class GetController {
             arr[i].put("id", 10);
             arr[i].put("forename", "Andrea");
             arr[i].put("surname", "Crocco");
-            arr[i].put("nationality", "IT");
-
-
+            arr[i].put("nationality", "Cuea");
         }
         return arr;
     }
