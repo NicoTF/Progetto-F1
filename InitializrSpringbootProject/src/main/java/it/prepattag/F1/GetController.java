@@ -32,10 +32,17 @@ public class GetController {
     }
 
     @RequestMapping("drivers")
-    public String[] drivers() {
-        String[] arr = new String[10];
+    public HashMap[] drivers() {
+        HashMap<String, Object>[] arr = new HashMap[10];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = "mona";
+            arr[i] = new HashMap<>();
+            arr[i].put("age", 18);
+            arr[i].put("id", 10);
+            arr[i].put("forename", "Andrea");
+            arr[i].put("surname", "Crocco");
+            arr[i].put("nationality", "IT");
+
+
         }
         return arr;
     }
