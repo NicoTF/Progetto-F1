@@ -44,4 +44,20 @@ public class GetController {
         }
         return arr;
     }
+
+	//Posizione nome cognome scuderia urlprofilo punteggio
+	@RequestMapping("classifica")
+	public HashMap[] classifica(){
+		HashMap<String,Object>[] m = new HashMap[10];
+		for (int i = 0; i < m.length; i++) {
+			m[i] = new HashMap<>();
+			m[i].put("nome", "Andrea");
+			m[i].put("cognome", "Crocco");
+			m[i].put("posizione", "3");
+			m[i].put("scuderia", "Ferrari");
+			m[i].put("punteggio", "121");
+			m[i].put("urlprofilo", "http:\\localhost\\url");
+		}
+		return m;
+	}
 }
