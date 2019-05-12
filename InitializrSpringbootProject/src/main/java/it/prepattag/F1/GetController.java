@@ -1,6 +1,8 @@
 package it.prepattag.F1;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -8,10 +10,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/get")
+@RequestMapping("get")
+/**
+ * Classe che gestisce le richieste get (/get/<attributo>) della API
+ */
 public class GetController {
 
-    @RequestMapping(value = "driver", params = "id", method = RequestMethod.GET)
+    /**
+     * Mapping per la richiesta delle informazioni di un pilota
+     *
+     * @param id l'id del pilota
+     * @return Le informazioni del pilota richiesto in formato JSON
+     */
+    @RequestMapping(value = "driver", params = "id")
     public Map driver(@RequestParam("id") int id) {
         HashMap<String, Object> m = new HashMap(10);
         if (id == 10) {
@@ -29,8 +40,12 @@ public class GetController {
         return m;
     }
 
-    @CrossOrigin(origins = "*")
-    @RequestMapping(value = "drivers", method = RequestMethod.GET, produces = "application/json")
+    /**
+     * Mapping per la richiesta di tutti i piloti
+     *
+     * @return Un array di piloti in formato JSON
+     */
+    @RequestMapping("drivers")
     public HashMap[] drivers() {
         HashMap<String, Object>[] arr = new HashMap[10];
         for (int i = 0; i < arr.length; i++) {
@@ -39,11 +54,16 @@ public class GetController {
             arr[i].put("id", 10);
             arr[i].put("forename", "Andrea");
             arr[i].put("surname", "Crocco");
-            arr[i].put("nationality", "Cuea");
+            arr[i].put("nationality", "IT");
         }
         return arr;
     }
 
+    /**
+     * Mapping per la richiesta della classifica dei piloti
+     *
+     * @return Un array con n piloti in ordine di punteggio
+     */
     //Posizione nome cognome scuderia urlprofilo punteggio
     @RequestMapping("classifica")
     public HashMap[] classifica() {
