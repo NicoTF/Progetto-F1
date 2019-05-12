@@ -1,9 +1,6 @@
 package it.prepattag.F1;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -13,6 +10,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/get")
 public class GetController {
+
     @RequestMapping(value = "driver", params = "id", method = RequestMethod.GET)
     public Map driver(@RequestParam("id") int id) {
         HashMap<String, Object> m = new HashMap(10);
@@ -31,6 +29,7 @@ public class GetController {
         return m;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "drivers", method = RequestMethod.GET, produces = "application/json")
     public HashMap[] drivers() {
         HashMap<String, Object>[] arr = new HashMap[10];
@@ -45,19 +44,19 @@ public class GetController {
         return arr;
     }
 
-	//Posizione nome cognome scuderia urlprofilo punteggio
-	@RequestMapping("classifica")
-	public HashMap[] classifica(){
-		HashMap<String,Object>[] m = new HashMap[10];
-		for (int i = 0; i < m.length; i++) {
-			m[i] = new HashMap<>();
-			m[i].put("nome", "Andrea");
-			m[i].put("cognome", "Crocco");
-			m[i].put("posizione", "3");
-			m[i].put("scuderia", "Ferrari");
-			m[i].put("punteggio", "121");
-			m[i].put("urlprofilo", "http:\\localhost\\url");
-		}
-		return m;
-	}
+    //Posizione nome cognome scuderia urlprofilo punteggio
+    @RequestMapping("classifica")
+    public HashMap[] classifica() {
+        HashMap<String, Object>[] m = new HashMap[10];
+        for (int i = 0; i < m.length; i++) {
+            m[i] = new HashMap<>();
+            m[i].put("nome", "Andrea");
+            m[i].put("cognome", "Crocco");
+            m[i].put("posizione", "3");
+            m[i].put("scuderia", "Ferrari");
+            m[i].put("punteggio", "121");
+            m[i].put("urlprofilo", "http:\\localhost\\url");
+        }
+        return m;
+    }
 }
