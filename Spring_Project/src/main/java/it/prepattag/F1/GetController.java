@@ -98,4 +98,6 @@ public class GetController {
 		}
 		return m;
 	}
+	//per ogni pilota quanti Gran premi ha vinto e quanti podi ha fatto
+	//e quante gare ha disputato (olte info base del pilota) e scuderia
 }
