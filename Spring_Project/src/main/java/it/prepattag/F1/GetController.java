@@ -61,10 +61,9 @@ public class GetController {
 
     /**
      * Mapping per la richiesta della classifica dei piloti
-     *
+     * (posizione nome cognome scuderia urlprofilo punteggio)
      * @return Un array con n piloti in ordine di punteggio
      */
-    //Posizione nome cognome scuderia urlprofilo punteggio
     @RequestMapping("classificapiloti")
     public HashMap[] classificapiloti() {
         HashMap<String, Object>[] m = new HashMap[10];
@@ -81,12 +80,10 @@ public class GetController {
     }
 	
 	 /**
-     * Mapping per la richiesta della classifica delle scuderie
+     * Mapping per la richiesta della classifica generale (non annuale) delle scuderie
 	 * dato il numero di posizioni da visualizzare
-     *
      * @return Un array con le n scuderie in ordine di punteggio
      */
-	//Classifica delle scuderie (non dato anno)
 	@RequestMapping("classificascuderie")
 	public HashMap[] classificascuderie(){
 		HashMap<String, Object>[] m = new HashMap[10];
