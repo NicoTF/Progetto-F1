@@ -65,8 +65,8 @@ public class GetController {
      * @return Un array con n piloti in ordine di punteggio
      */
     //Posizione nome cognome scuderia urlprofilo punteggio
-    @RequestMapping("classifica")
-    public HashMap[] classifica() {
+    @RequestMapping("classificapiloti")
+    public HashMap[] classificapiloti() {
         HashMap<String, Object>[] m = new HashMap[10];
         for (int i = 0; i < m.length; i++) {
             m[i] = new HashMap<>();
@@ -79,4 +79,23 @@ public class GetController {
         }
         return m;
     }
+	
+	 /**
+     * Mapping per la richiesta della classifica delle scuderie
+	 * dato il numero di posizioni da visualizzare
+     *
+     * @return Un array con le n scuderie in ordine di punteggio
+     */
+	//Classifica delle scuderie (non dato anno)
+	@RequestMapping("classificascuderie")
+	public HashMap[] classificascuderie(){
+		HashMap<String, Object>[] m = new HashMap[10];
+		for (int i = 0; i < m.length; i++) {
+			m[i] = new HashMap<>();
+			m[i].put("nome", "Ferrari");
+			m[i].put("posizione", "1");
+			m[i].put("punteggio", "155");
+		}
+		return m;
+	}
 }
